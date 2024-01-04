@@ -21,7 +21,7 @@ def product_list(request, category_slug=None):
         }
     )
 
-def product_datail(request, id, slug):
+def product_detail(request, id, slug):
 
     product = get_list_or_404(Product, id=id, slug=slug, available=True)
 
@@ -29,7 +29,7 @@ def product_datail(request, id, slug):
         request,
         'shop/product/detail.html',
         {
-            'producr': product
+            'product': product[0]
         }
     )
 
