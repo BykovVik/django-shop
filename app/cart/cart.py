@@ -13,6 +13,7 @@ class Cart:
 
         if not cart:
             self.session[settings.CART_SESSION_ID] = {}
+            cart = self.session.get(settings.CART_SESSION_ID)
 
         self.cart = cart
 
@@ -51,7 +52,8 @@ class Cart:
             self.cart[product_id]['quantity'] = quantity
         else:
             self.cart[product_id]['quantity'] += quantity
-            self.save()
+
+        self.save()
 
     def save(self):
         """
