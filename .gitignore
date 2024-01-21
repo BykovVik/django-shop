@@ -1,6 +1,7 @@
 env
 data
 media
+rabbitmq
 .vscode
 
 **/__pycache__/**
